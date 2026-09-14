@@ -1,72 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Senior warehouse operations expertise — warehouse design, setup, optimization, outsourced operations management, SOPs, inventory and performance improvement.">
-  <meta name="theme-color" content="#0b1117">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Northforge Materials Management Consulting | Warehouse Operations</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    :root{
-      --bg:#f5f6f4;
-      --white:#ffffff;
-      --ink:#0b1117;
-      --muted:#5d6872;
-      --line:#dfe3e5;
-      --accent:#c9a45c;
-      --accent-dark:#9a7839;
-      --dark:#0b1117;
-      --dark-2:#121b24;
-      --max:1180px;
-      --radius:18px;
-      --shadow:0 18px 55px rgba(11,17,23,.10);
+    /* Global Reset & Dark Theme Baseline */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #0d0f12;
+      color: #e2e8f0;
+      line-height: 1.6;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.6;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(calc(100% - 40px),var(--max));margin:auto}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;
-      font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
-      color:var(--accent-dark);
-    }
-    .eyebrow:before{content:"";width:28px;height:2px;background:var(--accent)}
-    h1,h2,h3{line-height:1.08;letter-spacing:-.035em}
-    h2{font-size:clamp(2.1rem,4vw,3.6rem)}
-    p{color:var(--muted)}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:14px 20px;border:1px solid transparent;border-radius:999px;
-      font-weight:800;font-size:.9rem;transition:.25s ease;cursor:pointer;
-    }
-    .btn-primary{background:var(--accent);color:#111}
-    .btn-primary:hover{background:#d8b66f;transform:translateY(-2px)}
-    .btn-dark{background:var(--dark);color:#fff}
-    .btn-dark:hover{background:#1d2934;transform:translateY(-2px)}
-    .btn-outline{border-color:rgba(255,255,255,.25);color:#fff}
-    .btn-outline:hover{background:#fff;color:var(--dark)}
 
-    /* NAV */
-    .nav{
-      position:fixed;top:0;left:0;right:0;z-index:1000;
-      background:rgba(11,17,23,.92);backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,.08);
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 4rem;
+      background-color: #0d0f12;
+      border-bottom: 1px solid #1e232a;
     }
-    .nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between}
-    .brand{color:#fff;font-weight:900;letter-spacing:.08em;font-size:.95rem}
-    .brand span{color:var(--accent)}
-    .nav-links{display:flex;align-items:center;gap:28px;color:#dce2e7;font-size:.84rem;font-weight:700}
-    .nav-links a:hover{color:var(--accent)}
-    .menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+
+    /* Logo & Tagline Container */
+    .brand-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #cba358; /* Muted Gold Accent */
+    }
+
+    /* Sub-logo Tagline Styling */
+    .brand-tagline {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8a94a6;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline span.word {
+      color: #8a94a6;
+    }
+
+    .brand-tagline span.separator {
+      color: #cba358; /* Gold Separator */
+      font-size: 0.65rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .btn-nav-primary {
+      background-color: #cba358;
+      color: #0d0f12;
+      padding: 0.6rem 1.25rem;
+      border-radius: 20px;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .btn-nav-primary:hover {
+      background-color: #b89247;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem 2rem;
+    }
+
+    .sub-category {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: #cba358;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sub-category::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background-color: #cba358;
+    }
+
+    .hero-headline {
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Action Buttons */
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+
+    .btn-hero-primary {
+      background-color: #cba358;
+      color: #0d0f12;
+      padding: 0.85rem 1.75rem;
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .btn-hero-secondary {
+      border: 1px solid #2e3541;
+      color: #ffffff;
+      padding: 0.85rem 1.75rem;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Category Badges */
+    .badges-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      border: 1px solid #1e242d;
+      background-color: #12151b;
+      padding: 0.5rem 1rem;
+      border-radius: 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #8a94a6;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="brand-container">
+      <div class="logo">NORTHFORGE <span>MATERIALS ADVISORY</span></div>
+      <div class="brand-tagline">
+        <span class="word">Seasoned</span>
+        <span class="separator">|</span>
+        <span class="word">Steadfast</span>
+        <span class="separator">|</span>
+        <span class="word">Authoritative</span>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#end-to-end">End-to-End</a></li>
+      <li><a href="#outsourcing">Outsourcing</a></li>
+      <li><a href="#commercial">Commercial</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#contact" class="btn-nav-primary">Discuss Your Requirement</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Hero Section -->
+  <main class="hero-section">
+    <div class="sub-category">SENIOR WAREHOUSE OPERATIONS EXPERTISE</div>
+    
+    <!-- Primary Headline -->
+    <h1 class="hero-headline">
+      WAREHOUSE OPERATIONS.<br />
+      BUILT TO PERFORM.
+    </h1>
+
+    <!-- Sub-description -->
+    <p class="hero-description">
+      Practical, senior-level expertise for companies that need to build, improve, stabilize or manage warehouse operations — from a single specialist assignment to a complete warehouse system.
+    </p>
+
+    <!-- Call to Actions -->
+    <div class="hero-cta-group">
+      <a href="#contact" class="btn-hero-primary">Discuss Your Requirement →</a>
+      <a href="#services" class="btn-hero-secondary">Explore Services</a>
+    </div>
+
+    <!-- Category Badges -->
+    <div class="badges-group">
+      <span class="badge">À La Carte Services</span>
+      <span class="badge">End-to-End Projects</span>
+      <span class="badge">Outsourced Operations</span>
+      <span class="badge">Senior Practitioners</span>
+    </div>
+  </main>
+
+</body>
+</html>
 
     /* HERO */
     .hero{
